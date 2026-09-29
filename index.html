@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>陳彥彰 Chen Yen-Chang｜懂造型的機構工程師</title>
+<meta name="description" content="陳彥彰，汽車內裝與車燈機構工程師，工業設計背景。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Barlow:wght@400;500&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#12406F; --paper-2:#0F365F; --line:#E4EFFA; --line-2:rgba(228,239,250,.62);
+  --line-3:rgba(228,239,250,.28); --grid:rgba(228,239,250,.07); --grid-2:rgba(228,239,250,.14);
+  --red:#FF8573; --glow:#9FD4FF;
+  --cond:"Barlow Condensed","Noto Sans TC",system-ui,sans-serif;
+  --body:"Barlow","Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){ --paper:#0B2A4A; --paper-2:#08223D; --line:#DCEAF8; }
+}
+:root[data-theme="dark"]{ --paper:#0B2A4A; --paper-2:#08223D; --line:#DCEAF8; }
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body{
+  margin:0;background:var(--paper);color:var(--line);font-family:var(--body);
+  font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;
+  background-image:
+    linear-gradient(var(--grid-2) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid-2) 1px,transparent 1px),
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px;
+}
+img,svg{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px dashed var(--red);outline-offset:3px}
+
+/* bilingual */
+html[data-lang="zh"] .en, html[data-lang="en"] .zh{display:none!important}
+
+/* header */
+header{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:10;
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line-3);
+}
+.bar{max-width:1120px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:20px}
+.mark{font-family:var(--cond);font-weight:600;font-size:18px;letter-spacing:.02em;text-decoration:none;margin-right:auto}
+nav.links{display:flex;gap:18px;font-size:14px}
+nav.links a{text-decoration:none;color:var(--line-2)}
+nav.links a:hover{color:var(--line)}
+.lang{display:flex;border:1px solid var(--line-2)}
+.lang button{
+  font:500 13px var(--cond);letter-spacing:.04em;background:none;color:var(--line-2);
+  border:0;padding:5px 11px;cursor:pointer;
+}
+.lang button[aria-pressed="true"]{background:var(--line);color:var(--paper)}
+@media (max-width:720px){nav.links{display:none}}
+
+main{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* hero sheet */
+.sheet{
+  position:relative;margin:28px 0 0;border:1.5px solid var(--line);
+  padding:10px;
+}
+.sheet-inner{border:1px solid var(--line-2);position:relative}
+.zone{position:absolute;font:500 11px var(--cond);color:var(--line-3)}
+.hero{display:grid;grid-template-columns:1fr;gap:0}
+.hero-copy{padding:36px 28px 8px}
+.hero h1{
+  font-family:var(--cond);font-weight:500;font-size:clamp(40px,7vw,76px);
+  line-height:1.02;margin:0 0 18px;letter-spacing:-.005em;
+}
+html[data-lang="zh"] .hero h1{font-family:"Noto Sans TC",sans-serif;font-weight:700;letter-spacing:.02em;line-height:1.15}
+.hero .lede{max-width:34em;color:var(--line-2);font-size:17px;margin:0}
+.drawing{padding:8px 12px 0}
+.drawing svg{display:block;width:100%;height:auto}
+.stroke{fill:none;stroke:var(--line);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.thin{stroke:var(--line-2);stroke-width:1}
+.hidden-line{stroke:var(--line-3);stroke-dasharray:6 4;stroke-width:1;fill:none}
+.ambient{fill:none;stroke:var(--glow);stroke-width:3;stroke-linecap:round;filter:drop-shadow(0 0 5px var(--glow))}
+.callout line,.callout path{stroke:var(--red);stroke-width:1.1;fill:none}
+.callout circle.bubble{fill:var(--paper);stroke:var(--red);stroke-width:1.4}
+.callout text{fill:var(--red);font-family:var(--cond);font-weight:600}
+.callout .tag{fill:var(--line);font-family:"Barlow Condensed","Noto Sans TC",sans-serif;font-weight:500}
+.callout a{cursor:pointer}
+.callout a:hover circle.bubble,.callout a:focus circle.bubble{fill:var(--red)}
+.callout a:hover text.l,.callout a:focus text.l{fill:var(--paper)}
+.dim{stroke:var(--line-3);stroke-width:1;fill:none}
+.dimtext{fill:var(--line-2);font:500 12px var(--cond)}
+
+.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.2s ease-out forwards}
+.fade{opacity:0;animation:fade .6s ease-out 1.8s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){
+  .draw{animation:none;stroke-dashoffset:0}
+  .fade{animation:none;opacity:1}
+  html{scroll-behavior:auto}
+}
+
+.sheet-foot{display:grid;grid-template-columns:1fr;border-top:1px solid var(--line-2)}
+.notes{padding:16px 22px;font-size:14px;color:var(--line-2)}
+.notes h2{font:600 14px var(--cond);color:var(--line);margin:0 0 6px;letter-spacing:.04em}
+.notes ol{margin:0;padding-left:1.3em}
+.notes li{margin:2px 0}
+.tb{display:grid;grid-template-columns:auto 1fr;border-top:1px solid var(--line-2);font-size:14px}
+.tb div{padding:7px 12px;border-bottom:1px solid var(--line-3)}
+.tb .k{font:500 12px var(--cond);color:var(--line-2);border-right:1px solid var(--line-3);white-space:nowrap}
+.tb .v{font-weight:500}
+.tb .v.big{font-family:var(--cond);font-size:22px;line-height:1.2}
+.tb div:nth-last-child(-n+2){border-bottom:0}
+@media (min-width:860px){
+  .sheet-foot{grid-template-columns:1fr 380px}
+  .tb{border-top:0;border-left:1px solid var(--line-2)}
+}
+
+/* sections */
+section{padding:88px 0 0}
+.sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-2);padding-bottom:10px;margin-bottom:32px}
+.sec-head h2{font-family:var(--cond);font-weight:500;font-size:34px;margin:0;line-height:1.1}
+html[data-lang="zh"] .sec-head h2{font-family:"Noto Sans TC",sans-serif;font-weight:700;font-size:28px}
+.sec-head .sheetno{margin-left:auto;font:500 13px var(--cond);color:var(--line-3);white-space:nowrap}
+.intro{max-width:40em;color:var(--line-2);margin:-12px 0 32px}
+
+/* capabilities */
+.caps{display:grid;grid-template-columns:1fr;gap:0;border:1px solid var(--line-2)}
+.cap{padding:24px 22px;border-bottom:1px solid var(--line-3)}
+.cap:last-child{border-bottom:0}
+.cap h3{font-size:19px;margin:0 0 4px}
+.cap .sub{font:500 14px var(--cond);color:var(--red);margin:0 0 10px;letter-spacing:.03em}
+.cap p{margin:0;color:var(--line-2);font-size:15px}
+@media (min-width:860px){
+  .caps{grid-template-columns:repeat(3,1fr)}
+  .cap{border-bottom:0;border-right:1px solid var(--line-3)}
+  .cap:last-child{border-right:0}
+}
+
+/* details */
+.details{display:grid;gap:28px}
+.detail{display:grid;grid-template-columns:64px 1fr;gap:18px;border-top:1px dashed var(--line-3);padding-top:24px}
+.detail:first-child{border-top:0;padding-top:0}
+.bub{
+  width:56px;height:56px;border:1.5px solid var(--red);border-radius:50%;
+  display:grid;place-items:center;font:600 24px var(--cond);color:var(--red);position:relative;
+}
+.bub::after{content:"";position:absolute;left:8px;right:8px;top:50%;border-top:1px solid var(--red)}
+.bub span{transform:translateY(-9px);font-size:20px}
+.bub small{position:absolute;bottom:6px;font:500 10px var(--cond)}
+.detail h3{font-size:21px;margin:0 0 2px;line-height:1.35}
+.meta{font:500 14px var(--cond);color:var(--line-2);margin:0 0 10px;letter-spacing:.02em}
+.detail p{margin:0 0 12px;color:var(--line-2);max-width:44em}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.chips li{border:1px solid var(--line-3);padding:1px 9px;font:500 14px var(--cond);letter-spacing:.02em}
+.chips.car li{border-color:var(--line-2);color:var(--line)}
+.lbl{font:500 12px var(--cond);color:var(--line-3);margin:10px 0 6px;letter-spacing:.04em}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;border-left:1px solid var(--line-2)}
+.tl li{position:relative;padding:0 0 30px 34px}
+.tl li::before{content:"";position:absolute;left:1px;top:8px;width:13px;height:13px;border:1.5px solid var(--line);background:var(--paper);transform:rotate(45deg)}
+.tl li:first-child::before{background:var(--red);border-color:var(--red)}
+.tl .when{font:500 14px var(--cond);color:var(--line-2)}
+.tl h3{font-size:18px;margin:0}
+.tl .org{color:var(--line-2);margin:0 0 6px;font-size:15px}
+.tl p{margin:0;color:var(--line-2);font-size:15px;max-width:44em}
+
+/* foundation */
+.two{display:grid;gap:36px}
+@media (min-width:860px){.two{grid-template-columns:1fr 1fr;gap:48px}}
+.block h3{font-size:18px;margin:0 0 10px}
+.block p{color:var(--line-2);margin:0 0 12px;font-size:15px}
+.edu{border-left:2px solid var(--line-2);padding-left:14px;margin-bottom:18px}
+.edu b{display:block;font-weight:500;color:var(--line)}
+.edu span{font:500 14px var(--cond);color:var(--line-2)}
+.concepts{display:grid;gap:0;border:1px solid var(--line-3)}
+.concept{padding:14px 16px;border-bottom:1px solid var(--line-3)}
+.concept:last-child{border-bottom:0}
+.concept b{font-weight:500}
+.concept p{margin:2px 0 0;font-size:14px}
+table.tools{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
+.tools th,.tools td{text-align:left;padding:7px 10px;border:1px solid var(--line-3);vertical-align:top}
+.tools th{font:500 13px var(--cond);color:var(--line-2);width:34%;white-space:nowrap}
+
+/* beyond */
+.beyond{display:grid;gap:0;border-top:1px solid var(--line-3)}
+.beyond div{display:grid;grid-template-columns:1fr;padding:14px 0;border-bottom:1px solid var(--line-3)}
+@media (min-width:720px){.beyond div{grid-template-columns:240px 1fr;gap:24px}}
+.beyond b{font-weight:500}
+.beyond span{color:var(--line-2);font-size:15px}
+
+/* contact */
+.contact{margin:88px 0 0;border:1.5px solid var(--line);padding:10px}
+.contact-inner{border:1px solid var(--line-2);padding:40px 28px;display:grid;gap:28px}
+@media (min-width:860px){.contact-inner{grid-template-columns:1.2fr 1fr;align-items:end}}
+.contact h2{font-family:var(--cond);font-weight:500;font-size:clamp(32px,5vw,52px);line-height:1.1;margin:0 0 12px}
+html[data-lang="zh"] .contact h2{font-family:"Noto Sans TC",sans-serif;font-weight:700;font-size:clamp(26px,4vw,40px)}
+.contact p{color:var(--line-2);margin:0;max-width:30em}
+.ways{display:grid;gap:10px}
+.ways a{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;text-decoration:none;
+  border:1px solid var(--line-2);padding:14px 16px;transition:background .15s,color .15s;
+}
+.ways a:hover{background:var(--line);color:var(--paper)}
+.ways small{font:500 13px var(--cond);color:inherit;opacity:.7}
+.ways strong{font-family:var(--cond);font-weight:500;font-size:20px;letter-spacing:.01em;word-break:break-all}
+footer{max-width:1120px;margin:0 auto;padding:28px 20px 40px;font:500 13px var(--cond);color:var(--line-3);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="mark" href="#top"><span class="zh">陳彥彰</span><span class="en">Chen Yen-Chang</span></a>
+    <nav class="links" aria-label="Sections">
+      <a href="#skills"><span class="zh">專長</span><span class="en">Skills</span></a>
+      <a href="#work"><span class="zh">量產實績</span><span class="en">Projects</span></a>
+      <a href="#path"><span class="zh">經歷</span><span class="en">Experience</span></a>
+      <a href="#design"><span class="zh">設計底子</span><span class="en">Design</span></a>
+      <a href="#contact"><span class="zh">聯絡</span><span class="en">Contact</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-set="zh" aria-pressed="true">中</button>
+      <button type="button" data-set="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO SHEET -->
+<div class="sheet">
+  <div class="sheet-inner">
+    <div class="hero">
+      <div class="hero-copy">
+        <h1>
+          <span class="zh">懂造型的<br>機構工程師</span>
+          <span class="en">A mechanical engineer<br>who speaks design.</span>
+        </h1>
+        <p class="lede">
+          <span class="zh">工業設計出身，現在做汽車內裝與車燈的機構開發。從設計意圖、光學與熱學需求，到實車裝配的最後一顆螺絲，我負責把「好看」變成「做得出來、裝得上去」。</span>
+          <span class="en">Trained in industrial design, now building automotive interior and lighting mechanisms. From design intent and optical/thermal requirements to the last screw at vehicle assembly, I turn “looks right” into “builds right.”</span>
+        </p>
+      </div>
+
+      <div class="drawing">
+        <svg viewBox="0 0 800 400" role="img" aria-labelledby="dtitle">
+          <title id="dtitle">汽車座艙線稿，標示氣氛燈、電子出風口、儀表與室內燈 / Cockpit line drawing with project callouts</title>
+          <!-- headliner & overhead console -->
+          <path class="stroke thin draw" pathLength="1" d="M110 48 Q400 8 690 48"/>
+          <path class="stroke draw" pathLength="1" d="M352 30 h96 a10 10 0 0 1 10 10 v10 a10 10 0 0 1 -10 10 h-96 a10 10 0 0 1 -10 -10 v-10 a10 10 0 0 1 10 -10z"/>
+          <circle class="stroke thin draw" pathLength="1" cx="378" cy="45" r="7"/>
+          <circle class="stroke thin draw" pathLength="1" cx="422" cy="45" r="7"/>
+          <!-- windshield -->
+          <path class="hidden-line" d="M60 150 L130 55 M740 150 L670 55"/>
+          <!-- dashboard -->
+          <path class="stroke draw" pathLength="1" d="M40 160 Q400 100 760 160"/>
+          <path class="stroke draw" pathLength="1" d="M40 160 L42 262 Q400 305 758 262 L760 160"/>
+          <!-- cluster -->
+          <path class="stroke draw" pathLength="1" d="M180 150 Q265 128 350 146 L346 214 Q265 205 184 214 Z"/>
+          <path class="stroke thin draw" pathLength="1" d="M198 162 Q265 148 332 160 L330 202 Q265 196 200 202 Z"/>
+          <!-- center display -->
+          <rect class="stroke draw" pathLength="1" x="380" y="150" width="130" height="78" rx="6"/>
+          <!-- electronic vents -->
+          <path class="stroke draw" pathLength="1" d="M66 196 h94 M66 208 h94"/>
+          <path class="stroke draw" pathLength="1" d="M536 190 h100 M536 202 h100"/>
+          <path class="stroke draw" pathLength="1" d="M650 196 h90 M650 208 h90"/>
+          <path class="stroke thin" d="M536 190 v12 M636 190 v12 M66 196 v12 M160 196 v12 M650 196 v12 M740 196 v12"/>
+          <!-- ambient light -->
+          <path class="ambient draw" pathLength="1" d="M70 244 Q400 282 730 244"/>
+          <!-- steering wheel -->
+          <path class="stroke draw" pathLength="1" d="M180 340 A88 88 0 1 1 352 340"/>
+          <circle class="stroke draw" pathLength="1" cx="266" cy="318" r="24"/>
+          <path class="stroke thin draw" pathLength="1" d="M242 318 H186 M290 318 H346 M266 342 V398"/>
+          <!-- console -->
+          <path class="stroke thin draw" pathLength="1" d="M410 290 L400 400 M500 290 L512 400"/>
+
+          <!-- dimension -->
+          <g class="fade">
+            <path class="dim" d="M40 382 H380 M40 376 V388 M380 376 V388"/>
+            <text class="dimtext" x="210" y="376" text-anchor="middle">SCALE 1:20</text>
+          </g>
+
+          <!-- callouts -->
+          <g class="callout fade">
+            <!-- A ambient -->
+            <a href="#d-a" aria-label="A 氣氛燈 Ambient lighting">
+              <circle cx="600" cy="262" r="3" fill="var(--red)"/>
+              <path d="M600 262 L660 330 H676"/>
+              <circle class="bubble" cx="694" cy="330" r="17"/>
+              <text class="l" x="694" y="336" text-anchor="middle" font-size="17">A</text>
+              <text class="tag zh" x="716" y="335" font-size="14">氣氛燈</text>
+              <text class="tag en" x="716" y="335" font-size="14">Ambient</text>
+            </a>
+            <!-- B vent -->
+            <a href="#d-b" aria-label="B 電子出風口 Electronic air vent">
+              <circle cx="586" cy="190" r="3" fill="var(--red)"/>
+              <path d="M586 190 L620 110 H646"/>
+              <circle class="bubble" cx="664" cy="110" r="17"/>
+              <text class="l" x="664" y="116" text-anchor="middle" font-size="17">B</text>
+              <text class="tag zh" x="686" y="115" font-size="14">電子出風口</text>
+              <text class="tag en" x="686" y="115" font-size="14">E-vent</text>
+            </a>
+            <!-- C cluster -->
+            <a href="#d-c" aria-label="C 儀表系統 Instrument cluster">
+              <circle cx="220" cy="175" r="3" fill="var(--red)"/>
+              <path d="M220 175 L150 110 H124"/>
+              <circle class="bubble" cx="106" cy="110" r="17"/>
+              <text class="l" x="106" y="116" text-anchor="middle" font-size="17">C</text>
+              <text class="tag zh" x="30" y="84" font-size="14">儀表系統</text>
+              <text class="tag en" x="30" y="84" font-size="14">Cluster</text>
+            </a>
+            <!-- D interior lamp -->
+            <a href="#d-d" aria-label="D 室內燈 Interior lamps">
+              <circle cx="422" cy="45" r="3" fill="var(--red)"/>
+              <path d="M422 45 L500 80 H528"/>
+              <circle class="bubble" cx="546" cy="80" r="17"/>
+              <text class="l" x="546" y="86" text-anchor="middle" font-size="17">D</text>
+              <text class="tag zh" x="568" y="85" font-size="14">室內燈</text>
+              <text class="tag en" x="568" y="85" font-size="14">Interior lamp</text>
+            </a>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="sheet-foot">
+      <div class="notes">
+        <h2><span class="zh">附註</span><span class="en">NOTES</span></h2>
+        <ol>
+          <li><span class="zh">標註 A–D 為我主導設計整合、已導入量產車型的項目，點選可看細節。</span><span class="en">Callouts A–D are components I led through design integration into production vehicles. Tap to see details.</span></li>
+          <li><span class="zh">導入車型：LUXGEN N7、FOXTRON Bria／Cavira／Model D、Model T 電動巴士。</span><span class="en">Vehicles: LUXGEN N7, FOXTRON Bria / Cavira / Model D, and the Model T electric bus.</span></li>
+        </ol>
+      </div>
+      <div class="tb" aria-label="Title block">
+        <div class="k"><span class="zh">姓名</span><span class="en">NAME</span></div>
+        <div class="v big">陳彥彰 Chen Yen-Chang</div>
+        <div class="k"><span class="zh">職稱</span><span class="en">TITLE</span></div>
+        <div class="v"><span class="zh">資深工程師（機構）</span><span class="en">Senior Engineer, Mechanical</span></div>
+        <div class="k"><span class="zh">任職</span><span class="en">COMPANY</span></div>
+        <div class="v"><span class="zh">鴻華先進科技 Foxtron</span><span class="en">Foxtron Vehicle Technologies</span></div>
+        <div class="k"><span class="zh">領域</span><span class="en">FIELD</span></div>
+        <div class="v"><span class="zh">汽車內裝、車燈、IP Layout</span><span class="en">Auto interior, lighting, IP layout</span></div>
+        <div class="k"><span class="zh">學歷</span><span class="en">DEGREE</span></div>
+        <div class="v"><span class="zh">國立臺灣師範大學 設計碩士</span><span class="en">M.Des., National Taiwan Normal Univ.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-head">
+    <h2><span class="zh">我會說的三種語言</span><span class="en">Three languages I speak</span></h2>
+    <span class="sheetno">SHEET 2 / 6</span>
+  </div>
+  <p class="intro">
+    <span class="zh">一個零件從概念到上車，要經過設計、工程、供應鏈三組人。我的價值在於能跟這三組人用各自的語言溝通，讓需求不在交接時走樣。</span>
+    <span class="en">A part travels through design, engineering, and supply chain before it reaches a car. I can talk to all three in their own terms, so requirements don’t get lost at each handoff.</span>
+  </p>
+  <div class="caps">
+    <div class="cap">
+      <h3><span class="zh">造型語言</span><span class="en">Design</span></h3>
+      <p class="sub">Sketch · Rhino · Keyshot</p>
+      <p><span class="zh">工業設計背景，會手繪速寫與 3D 渲染。拿到 ID 圖時，看得懂設計師要的線條、比例與分模面，能在結構限制下保住造型。</span><span class="en">Industrial design training in sketching and 3D rendering. I read what designers want in lines, proportions and parting lines, and protect it within structural constraints.</span></p>
+    </div>
+    <div class="cap">
+      <h3><span class="zh">結構語言</span><span class="en">Engineering</span></h3>
+      <p class="sub">Catia · 2D/3D · BOM</p>
+      <p><span class="zh">IP 與內外飾塑件、鈑件設計與 Layout；機構 2D/3D 圖面與 BOM 建立；實車裝配問題的對策與排除。</span><span class="en">IP, interior/exterior plastic and sheet-metal design and layout; 2D/3D drawings and BOMs; root-causing and fixing issues found at vehicle assembly.</span></p>
+    </div>
+    <div class="cap">
+      <h3><span class="zh">協作語言</span><span class="en">Integration</span></h3>
+      <p class="sub">Optical · Thermal · Electrical · LIN</p>
+      <p><span class="zh">整合光學、熱學、電子與 LIN 通訊軟體團隊，掌控專案進度；零件發包估價、廠商資質審核與技術評價。</span><span class="en">Coordinating optics, thermal, electronics and LIN software teams while keeping schedules on track; part sourcing, supplier qualification and technical evaluation.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="work">
+  <div class="sec-head">
+    <h2><span class="zh">量產實績</span><span class="en">Production projects</span></h2>
+    <span class="sheetno">SHEET 3 / 6</span>
+  </div>
+  <div class="details">
+    <article class="detail" id="d-a">
+      <div class="bub" aria-hidden="true"><span>A</span><small>3</small></div>
+      <div>
+        <h3><span class="zh">氣氛燈設計與開發</span><span class="en">Ambient lighting</span></h3>
+        <p class="meta"><span class="zh">2022.04 – 持續進行</span><span class="en">Apr 2022 – present</span></p>
+        <p><span class="zh">負責專案管理與設計整合，涵蓋機構、光學、熱學、電學與 LIN 通訊軟體；主導實車裝配與問題對策排除。</span><span class="en">Project lead for design integration across mechanical, optical, thermal, electrical and LIN software; owned vehicle assembly and issue resolution.</span></p>
+        <p class="lbl"><span class="zh">導入車型</span><span class="en">Vehicles</span></p>
+        <ul class="chips car"><li>LUXGEN N7</li><li>FOXTRON Bria</li><li>Cavira</li><li>Model D</li></ul>
+      </div>
+    </article>
+    <article class="detail" id="d-b">
+      <div class="bub" aria-hidden="true"><span>B</span><small>3</small></div>
+      <div>
+        <h3><span class="zh">電子出風口設計與開發</span><span class="en">Electronic air vent</span></h3>
+        <p class="meta"><span class="zh">電機自動化／LIN 通訊</span><span class="en">Motorized actuation / LIN</span></p>
+        <p><span class="zh">把傳統手撥葉片改為電機驅動，負責機構與電機自動化、LIN 通訊軟體的設計整合，並處理實車裝配問題。</span><span class="en">Replacing manual louvers with motorized ones: integrated the mechanism, actuation and LIN software, and resolved assembly issues on the vehicle.</span></p>
+        <p class="lbl"><span class="zh">導入車型</span><span class="en">Vehicles</span></p>
+        <ul class="chips car"><li>FOXTRON Bria</li><li>Cavira</li><li>Model D</li></ul>
+      </div>
+    </article>
+    <article class="detail" id="d-c">
+      <div class="bub" aria-hidden="true"><span>C</span><small>3</small></div>
+      <div>
+        <h3><span class="zh">電動巴士儀表系統</span><span class="en">E-bus instrument cluster</span></h3>
+        <p class="meta"><span class="zh">2022.01 – 2023.01</span><span class="en">Jan 2022 – Jan 2023</span></p>
+        <p><span class="zh">電動巴士儀表系統的開發與優化，完成實車裝配與問題對策。車輛目前行駛於台北、三重、大都會、台中、府城、高雄等客運路線。</span><span class="en">Developed and refined the instrument system for an electric bus, through vehicle assembly and fixes. The bus now runs on routes operated by Taipei, Sanchung, Metropolitan, Taichung, Fucheng and Kaohsiung bus companies.</span></p>
+        <p class="lbl"><span class="zh">導入車型</span><span class="en">Vehicle</span></p>
+        <ul class="chips car"><li>FOXTRON Model T</li></ul>
+      </div>
+    </article>
+    <article class="detail" id="d-d">
+      <div class="bub" aria-hidden="true"><span>D</span><small>3</small></div>
+      <div>
+        <h3><span class="zh">室內燈設計與開發</span><span class="en">Interior lamps</span></h3>
+        <p class="meta"><span class="zh">2025.10 – 持續進行</span><span class="en">Oct 2025 – present</span></p>
+        <p><span class="zh">地圖燈、閱讀燈、行李箱燈的專案管理，整合機構、光學、熱學、電學設計，並負責實車裝配與問題對策。</span><span class="en">Map, reading and trunk lamps: project management and integration of mechanical, optical, thermal and electrical design, through vehicle assembly.</span></p>
+        <p class="lbl"><span class="zh">導入車型</span><span class="en">Vehicles</span></p>
+        <ul class="chips car"><li>FOXTRON Bria</li><li>Cavira</li><li>Model D</li></ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="path">
+  <div class="sec-head">
+    <h2><span class="zh">經歷</span><span class="en">Experience</span></h2>
+    <span class="sheetno">SHEET 4 / 6</span>
+  </div>
+  <ol class="tl">
+    <li>
+      <span class="when"><span class="zh">2021.09 – 現在</span><span class="en">Sep 2021 – present</span></span>
+      <h3><span class="zh">資深工程師（機構）</span><span class="en">Senior Engineer, Mechanical</span></h3>
+      <p class="org"><span class="zh">鴻華先進科技</span><span class="en">Foxtron Vehicle Technologies</span></p>
+      <p><span class="zh">汽車內裝與車燈研發：IP 與內外飾塑件、鈑件設計與 Layout；車燈市場趨勢研究與技術開發測試；零件發包與廠商技術評價。帶領小組成員協作。</span><span class="en">Interior and lighting R&amp;D: IP and trim design and layout, lighting technology development and testing, sourcing and supplier evaluation. Leads a small team.</span></p>
+    </li>
+    <li>
+      <span class="when"><span class="zh">2020.09 – 2021.09</span><span class="en">Sep 2020 – Sep 2021</span></span>
+      <h3><span class="zh">設計專案工程師</span><span class="en">Design Project Engineer</span></h3>
+      <p class="org"><span class="zh">佳欣光電科技</span><span class="en">Jiaxin Optoelectronics (automotive lighting)</span></p>
+      <p><span class="zh">車燈研發的起點：參與車燈自主研發，研究市場趨勢、協助技術開發與測試，負責機構 2D/3D 圖面與 BOM。</span><span class="en">Where automotive lighting started for me: in-house lamp development, trend research, testing, and mechanical drawings and BOMs.</span></p>
+    </li>
+    <li>
+      <span class="when"><span class="zh">2019.02 – 2019.08</span><span class="en">Feb – Aug 2019</span></span>
+      <h3><span class="zh">研究助理</span><span class="en">Research Assistant</span></h3>
+      <p class="org"><span class="zh">國立臺灣師範大學</span><span class="en">National Taiwan Normal University</span></p>
+      <p><span class="zh">研究計畫撰寫與執行規劃，研究方法篩選與國內外文獻分析。</span><span class="en">Drafted and planned research projects; selected methods and reviewed literature.</span></p>
+    </li>
+    <li>
+      <span class="when"><span class="zh">2016.07 – 2017.08</span><span class="en">Jul 2016 – Aug 2017</span></span>
+      <h3><span class="zh">總經理特助</span><span class="en">Assistant to the General Manager</span></h3>
+      <p class="org"><span class="zh">武林文創</span><span class="en">Wulin Cultural &amp; Creative</span></p>
+      <p><span class="zh">活動規劃與執行、文宣撰寫與平面設計，並編排幼兒武術課程「唐詩功夫」，受邀於臺北國際創業週、臺北好時尚演出。</span><span class="en">Planned and ran events, wrote and designed print collateral, and designed “Tang Poetry Kung Fu,” a movement course for young children, performed at StartUP@Taipei and Fashion in Taipei.</span></p>
+    </li>
+  </ol>
+</section>
+
+<!-- DESIGN FOUNDATION -->
+<section id="design">
+  <div class="sec-head">
+    <h2><span class="zh">設計底子</span><span class="en">Design foundation</span></h2>
+    <span class="sheetno">SHEET 5 / 6</span>
+  </div>
+  <div class="two">
+    <div class="block">
+      <h3><span class="zh">學歷</span><span class="en">Education</span></h3>
+      <div class="edu">
+        <b><span class="zh">國立臺灣師範大學 設計研究所 碩士</span><span class="en">M.Des., Graduate Institute of Design, NTNU</span></b>
+        <span>2018 – 2020</span>
+      </div>
+      <div class="edu">
+        <b><span class="zh">義守大學 創意商品設計學系</span><span class="en">B.A., Creative Product Design, I-Shou University</span></b>
+        <span>2011 – 2015</span>
+      </div>
+      <h3><span class="zh">碩士論文：用數據讀懂使用者偏好</span><span class="en">Thesis: reading user preference with data</span></h3>
+      <p><span class="zh">以《英雄聯盟》145 位角色、974 款造型為樣本，依顏色、原型、性格分類後進行問卷調查，用三因子變異數分析找出不同性別、年齡、教育程度玩家的造型偏好差異。這段訓練讓我習慣先問「使用者到底喜歡什麼」，再動手畫。</span><span class="en">Sampled 974 skins across 145 League of Legends characters, classified by color, form and personality, surveyed players, and used three-way ANOVA to find how gender, age and education shape style preference. It taught me to ask what users actually want before I draw.</span></p>
+      <h3><span class="zh">工具</span><span class="en">Tools</span></h3>
+      <table class="tools">
+        <tr><th><span class="zh">工程製圖</span><span class="en">CAD</span></th><td>Catia, SketchUp</td></tr>
+        <tr><th><span class="zh">3D 建模與渲染</span><span class="en">3D &amp; render</span></th><td>Rhino, 3ds Max, ZBrush, Keyshot, V-Ray</td></tr>
+        <tr><th><span class="zh">視覺設計</span><span class="en">Visual</span></th><td>Photoshop, Illustrator, CorelDRAW</td></tr>
+        <tr><th><span class="zh">分析與文書</span><span class="en">Analysis</span></th><td>SPSS, Word, PowerPoint, Excel</td></tr>
+      </table>
+    </div>
+    <div class="block">
+      <h3><span class="zh">概念作品</span><span class="en">Concept work</span></h3>
+      <div class="concepts">
+        <div class="concept">
+          <b><span class="zh">5G 雲端翻譯機</span><span class="en">5G cloud translator</span></b>
+          <p><span class="zh">眼鏡式透明顯示＋頸環喉震動發聲，解放雙手的即時翻譯穿戴裝置。</span><span class="en">Glasses with a transparent display and a throat-vibration neckband for hands-free live translation.</span></p>
+        </div>
+        <div class="concept">
+          <b><span class="zh">磁控拳擊機</span><span class="en">Magnetic boxing trainer</span></b>
+          <p><span class="zh">以電磁片切換 N／S 極調整打擊難度，讓一個人也能練靶。</span><span class="en">Electromagnets flip polarity to change difficulty, so one person can train without a pad holder.</span></p>
+        </div>
+        <div class="concept">
+          <b><span class="zh">雀巢極限登山餐具組</span><span class="en">Nestlé expedition mess kit</span></b>
+          <p><span class="zh">內建發熱包原理，不需爐具即可加熱餐食；外盒直角利於倒液、內盒圓角便於就口。</span><span class="en">Flameless heating pack built in; square outer box for pouring, rounded inner box for eating from.</span></p>
+        </div>
+        <div class="concept">
+          <b><span class="zh">茶藝、留香、燈・山水</span><span class="en">Tea set, perfume bottles, wall lamp</span></b>
+          <p><span class="zh">以四君子、埃及九柱神、園林山水為題的文化產品，含玻璃瓶中物實作。</span><span class="en">Cultural products drawing on the Four Gentlemen, the Egyptian Ennead and garden landscapes, including hand-worked glass.</span></p>
+        </div>
+      </div>
+      <p style="margin-top:14px"><span class="zh">參展：台北新一代設計展 2015、高雄青春設計節 2014／2015。</span><span class="en">Exhibited at Young Designers’ Exhibition Taipei 2015 and Kaohsiung Youth Design Festival 2014 / 2015.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- BEYOND -->
+<section id="beyond">
+  <div class="sec-head">
+    <h2><span class="zh">工作以外</span><span class="en">Outside work</span></h2>
+    <span class="sheetno">SHEET 6 / 6</span>
+  </div>
+  <div class="beyond">
+    <div><b><span class="zh">跆拳道初段（黑帶）</span><span class="en">Taekwondo 1st Dan</span></b><span><span class="zh">龍泉盃全國跆拳道錦標賽季軍，大學武術與跆拳道社幹部。</span><span class="en">Third place at the Longquan Cup national championship; officer of the university martial arts and taekwondo clubs.</span></span></div>
+    <div><b><span class="zh">跨文化經驗</span><span class="en">Living abroad</span></b><span><span class="zh">研究所前獨自在英國生活半年，研究所期間取得歐洲交換學生資格。</span><span class="en">Six months living in the UK before grad school, and a European exchange during it.</span></span></div>
+    <div><b><span class="zh">鏡頭前</span><span class="en">On camera</span></b><span><span class="zh">代表學校拍攝全國大專校院運動會形象廣告，參與微電影《籠》演出。</span><span class="en">Featured in the promotional film for the National Intercollegiate Games, and acted in the short film “Cage.”</span></span></div>
+    <div><b><span class="zh">語言</span><span class="en">Languages</span></b><span><span class="zh">中文、台語流利，英文可工作溝通。</span><span class="en">Fluent Mandarin and Taiwanese; working English.</span></span></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact" aria-labelledby="ct">
+  <div class="contact-inner">
+    <div>
+      <h2 id="ct"><span class="zh">有想一起做的東西嗎？</span><span class="en">Building something?</span></h2>
+      <p><span class="zh">不論是新的專案、技術交流，或只是想聊聊車用內裝與燈具，都歡迎來信或來電。</span><span class="en">New projects, technical exchange, or just a chat about automotive interiors and lighting — I’m happy to hear from you.</span></p>
+    </div>
+    <div class="ways">
+      <a href="mailto:a89667557@gmail.com"><small>Email</small><strong>a89667557@gmail.com</strong></a>
+      <a href="tel:+886975635967"><small><span class="zh">手機</span><span class="en">Phone</span></small><strong>0975-635-967</strong></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span><span class="zh">繪製　陳彥彰</span><span class="en">Drawn by Chen Yen-Chang</span></span>
+  <span>REV. 2026</span>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btns=document.querySelectorAll('.lang button');
+  var titles={zh:'陳彥彰 Chen Yen-Chang｜懂造型的機構工程師',en:'Chen Yen-Chang | A mechanical engineer who speaks design'};
+  function set(l){
+    root.setAttribute('data-lang',l);
+    root.setAttribute('lang',l==='zh'?'zh-Hant':'en');
+    document.title=titles[l];
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===l?'true':'false')});
+    try{localStorage.setItem('lang',l)}catch(e){}
+  }
+  var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
+  set(saved==='en'||saved==='zh'?saved:'zh');
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
+})();
+</script>
+</body>
+</html>
